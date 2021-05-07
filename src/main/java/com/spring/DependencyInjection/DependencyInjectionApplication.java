@@ -1,8 +1,6 @@
 package com.spring.DependencyInjection;
 
-import com.spring.DependencyInjection.Controller.ConstructorInjectedController;
-import com.spring.DependencyInjection.Controller.MyController;
-import com.spring.DependencyInjection.Controller.PropertyInjectedController;
+import com.spring.DependencyInjection.Controller.I18nController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -12,9 +10,10 @@ public class DependencyInjectionApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext  applicationContext= SpringApplication.run(DependencyInjectionApplication.class, args);
+		I18nController i18nController = (I18nController) applicationContext.getBean("i18nController");
+		System.out.println(i18nController.Greeting());
 
-		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) applicationContext.getBean("constructorInjectedController");
-		System.out.println(constructorInjectedController.Greeting());
+
 	}
 
 }
