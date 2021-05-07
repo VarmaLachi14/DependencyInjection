@@ -3,9 +3,9 @@ package com.spring.DependencyInjection.Service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GreetingServiceImpl implements GreetingService {
+public class constructorInjectedGreetingServiceImpl implements GreetingService {
     @Override
     public String sayGreeting() {
-        return "Hello World from Greeting Service   -> Implementation 1";
+        return "Hello World from Greeting Service   -> Implementation 2";
     }
 }
